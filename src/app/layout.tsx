@@ -1,7 +1,13 @@
+import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "./favicon.ico";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { VisualEditing } from "next-sanity";
 
+import { draftMode } from "next/headers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +22,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {draftMode().isEnabled && (
+          <a
+            className="fixed right-0 bottom-0 bg-blue-500 text-white p-4 m-4"
+            href="/api/draft-mode/disable"
+          >
+            Disable preview mode
+          </a>
+        )}
+        <div className="h-[100vh]">
+          <div className="h-[5vh] min-h-[40px] z-10 bg-slate-400 flex justify-between">
+            <Link className="p-2 hover:bg-slate-500" href={"/"}>
+              <Image alt={"weight"} height={40} width={40} src={Logo} />
+            </Link>
+            <Link href={"/glossary"}>
+              <div className="p-2 h-[4vh] hover:bg-slate-500">Glossary</div>
+            </Link>
+          </div>
+          {children}
+        </div>
+        {draftMode().isEnabled && <VisualEditing />}
+      </body>
     </html>
   );
 }

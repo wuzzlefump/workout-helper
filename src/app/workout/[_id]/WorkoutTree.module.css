@@ -1,0 +1,94 @@
+.relationshipTreeContianer {
+  list-style: none;
+}
+
+.relationshipTreeContianer ul {
+  list-style: none;
+}
+.relationshipTreeContianer ul.relationshipTreeContianer > li:after,
+ul.relationshipTreeContianer > li:before {
+  display: none;
+}
+.noChild {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  cursor: default;
+}
+.relationshipTreeContianer details > summary {
+  padding: 3px;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.relationshipTreeContianer details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.relationshipTreeContianer ul li {
+  position: relative;
+  list-style: none;
+}
+
+.relationshipTreeContianer ul li::before {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  content: "";
+  width: 8px;
+  height: 1em;
+}
+
+.relationshipTreeContianer ul li::after {
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+  border-left: 2px solid black;
+  content: "";
+  width: 8px;
+  height: 100%;
+}
+.relationshipTreeContianer ul li:last-child::after {
+  display: none;
+}
+
+/* ul.relationshipTreeContianer li:last-child div.relationshipDefaultHeader {
+  background-color: aqua;
+} */
+
+.relationshipTreeContianer summary:hover {
+  cursor: pointer;
+  border-radius: var(--br3);
+  background-color: var(--pltNeutral100);
+}
+
+.generalContainer {
+  width: 100%;
+  justify-content: space-between;
+  padding: 3px;
+  display: flex;
+}
+
+.relationshipHeader {
+  font-weight: bold;
+}
+.resourceName {
+  font-weight: bold;
+}
+
+.otherContainer {
+  width: 100%;
+  justify-content: space-between;
+  padding: 3px;
+  display: flex;
+}
+
+.treeHead {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
