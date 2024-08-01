@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   TWorkoutHydrated,
@@ -5,12 +6,21 @@ import {
 } from "../../../../typings";
 import styles from "./WorkoutTree.module.css";
 import { createUrlWithSearchParams } from "./utils";
+import { useSearchParams } from "next/navigation";
 interface Props {
   workout: TWorkoutHydrated;
   open?: boolean;
 }
 
 function WorkoutTree({ workout, open = true }: Props) {
+  const searchParams = useSearchParams();
+  let SectionIndexRaw = searchParams.get("si");
+
+  let SectionIndex =
+    SectionIndexRaw === undefined || SectionIndexRaw === null
+      ? undefined
+      : parseInt(SectionIndexRaw);
+
   return (
     <div>
       <Link
@@ -37,6 +47,7 @@ function WorkoutTree({ workout, open = true }: Props) {
               exerciseInstances={x.exerciseInstances}
               parentPadding={5}
               index={key}
+              currentSectionIndex={SectionIndex}
             />
           );
         })}
@@ -57,6 +68,8 @@ interface TreeNodeProps {
   type: "SECTION" | "INSTANCE";
   sectionIndex: number;
   instanceIndex?: number;
+  currentInstanceIndex?: number;
+  currentSectionIndex?: number;
 }
 let RelationTreeNode = ({
   open = true,
@@ -68,8 +81,10 @@ let RelationTreeNode = ({
   instanceIndex,
   workoutId,
   type,
+  currentSectionIndex,
 }: TreeNodeProps) => {
   let exercises = exerciseInstances ? exerciseInstances : [];
+
   return (
     <ul key={`list_${index}`}>
       <details open={open} style={{ paddingInlineStart: `${parentPadding}px` }}>
@@ -82,7 +97,7 @@ let RelationTreeNode = ({
             })}
           >
             <div
-              className={`font-bold p-1 ${type !== "SECTION" && "hover:bg-blue-200"} `}
+              className={`font-bold p-1 ${type === "SECTION" && currentSectionIndex === sectionIndex && "text-cyan-400"}  ${type !== "SECTION" && "hover:bg-blue-200"} `}
             >
               {resourceName}
             </div>

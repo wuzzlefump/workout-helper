@@ -122,7 +122,7 @@ function IntervalScreen({
         let newUrl = createUrlWithSearchParams({ ...body });
         router.push(newUrl);
       } else if (sectionIndex === 0 && instanceIndex === 0) {
-        router.push(`workout/${workout._id}`);
+        router.push(`/workout/${workout._id}`);
       } else if (
         workout.workoutSections[sectionIndex - 1]?.exerciseInstances[
           workout.workoutSections[sectionIndex - 1]?.exerciseInstances?.length -

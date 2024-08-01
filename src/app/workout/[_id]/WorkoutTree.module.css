@@ -17,7 +17,7 @@ ul.relationshipTreeContianer > li:before {
   cursor: default;
 }
 .relationshipTreeContianer details > summary {
-  padding: 3px;
+  /* padding: 3px; */
   list-style: none;
   width: 100%;
   display: flex;
@@ -62,8 +62,6 @@ ul.relationshipTreeContianer > li:before {
 
 .relationshipTreeContianer summary:hover {
   cursor: pointer;
-  border-radius: var(--br3);
-  background-color: var(--pltNeutral100);
 }
 
 .generalContainer {
@@ -74,10 +72,10 @@ ul.relationshipTreeContianer > li:before {
 }
 
 .relationshipHeader {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 .resourceName {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .otherContainer {

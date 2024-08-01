@@ -73,7 +73,10 @@ async function Page({
 	 h-[95vh]
 	  "
       >
-        <WorkoutTree workout={workout} />
+        <WorkoutTree
+          key={`${workout?._id}_${instanceIndex ?? "--"}_${sectionIndex ?? "--"}`}
+          workout={workout}
+        />
       </div>
       <div
         className="
