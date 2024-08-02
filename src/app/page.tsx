@@ -21,7 +21,7 @@ export default async function Home() {
       <div
         className="
       border border-solid border-gray-200 rounded-md
-      p-3 min-h-[60vh]
+      p-3 h-[60vh] overflow-y-auto
       flex flex-col"
       >
         {workouts.map((x, key) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import {
-  exerciseS_QUERY,
-  exercise_QUERY,
+  EXERCISES_QUERY,
+  EXERCISE_QUERY,
 } from "../../../../sanity/lib/queries";
 import { QueryParams, SanityDocument } from "next-sanity";
 import { client, sanityFetch } from "../../../../sanity/lib/client";
@@ -12,7 +12,7 @@ import RichText from "@/components/RichText";
 interface Props {}
 
 export async function generateStaticParams() {
-  const exercises = await client.fetch<SanityDocument[]>(exerciseS_QUERY);
+  const exercises = await client.fetch<SanityDocument[]>(EXERCISES_QUERY);
 
   return exercises.map((ex) => ({
     _id: ex._id,
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 async function Page({ params }: { params: QueryParams }) {
   const initial = await sanityFetch<SanityDocument>({
-    query: exercise_QUERY,
+    query: EXERCISE_QUERY,
     params: params,
   });
   let exercise = initial as Texercise;

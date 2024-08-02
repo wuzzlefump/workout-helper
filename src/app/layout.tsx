@@ -33,11 +33,11 @@ export default function RootLayout({
         )}
         <div className="h-[100vh]">
           <div className="h-[5vh] min-h-[40px] z-10 bg-slate-400 flex justify-between">
-            <Link className="p-2 hover:bg-slate-500" href={"/"}>
+            <Link className="p-2 hover:bg-slate-500 h-[inherit]" href={"/"}>
               <Image alt={"weight"} height={40} width={40} src={Logo} />
             </Link>
-            <Link href={"/glossary"}>
-              <div className="p-2 h-[4vh] hover:bg-slate-500">Glossary</div>
+            <Link className="h-[inherit]" href={"/glossary"}>
+              <div className="p-2 h-[inherit] hover:bg-slate-500">Glossary</div>
             </Link>
           </div>
           {children}

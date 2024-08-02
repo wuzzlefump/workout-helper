@@ -71,13 +71,6 @@ ul.relationshipTreeContianer > li:before {
   display: flex;
 }
 
-.relationshipHeader {
-  /* font-weight: bold; */
-}
-.resourceName {
-  /* font-weight: bold; */
-}
-
 .otherContainer {
   width: 100%;
   justify-content: space-between;

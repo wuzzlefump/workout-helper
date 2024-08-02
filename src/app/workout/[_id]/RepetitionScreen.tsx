@@ -173,7 +173,7 @@ function RepetitionScreen({
       <div>
         <div className="justify-center min-h-[80px] h-[10vh] border-b border-black flex w-[100%] md:justify-start align-bottom pt-5 pl-5">
           {/* header */}
-          <h1 className=" font-extrabold text-3xl">
+          <h1 className=" font-extrabold text-lg md:text-3xl">
             {currentInstance?.name ?? "--"}
           </h1>
         </div>
@@ -201,7 +201,7 @@ function RepetitionScreen({
             </p>
           </div>
         </div>
-        <div className="h-[9vh] border-t border-black flex justify-center gap-52">
+        <div className="h-[9vh] border-t border-black flex justify-center gap-40 md:gap-52">
           <div
             onClick={() =>
               handleWorkoutTransition(

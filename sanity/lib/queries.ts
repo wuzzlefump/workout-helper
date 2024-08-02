@@ -3,13 +3,13 @@ import { groq } from "next-sanity";
 // gets unhydrated workout list
 export const WORKOUTS_QUERY = groq`*[_type == "workout"]`;
 
-export const exerciseS_QUERY = groq`*[_type == "exercise"]{
+export const EXERCISES_QUERY = groq`*[_type == "exercise"]{
 ...,
 primaryImage{
 ...,
 asset->{...}}}`;
 
-export const exercise_QUERY = groq`*[_type == "exercise" && _id == $_id][0]{
+export const EXERCISE_QUERY = groq`*[_type == "exercise" && _id == $_id][0]{
 ...,
 primaryImage{
 ...,

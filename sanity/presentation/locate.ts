@@ -27,6 +27,14 @@ export const locate: DocumentLocationResolver = (params, context) => {
               href: `/workout/${doc._id}`,
             },
             {
+              title: doc.title || "Untitled",
+              href: `/glossary/${doc._id}`,
+            },
+            {
+              title: doc.title || "Untitled",
+              href: `/glossary`,
+            },
+            {
               title: "Home",
               href: "/",
             },

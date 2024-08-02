@@ -1,6 +1,6 @@
 import React from "react";
 import { sanityFetch } from "../../../sanity/lib/client";
-import { exerciseS_QUERY } from "../../../sanity/lib/queries";
+import { EXERCISES_QUERY } from "../../../sanity/lib/queries";
 import { Texercise } from "../../../typings";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import Image from "next/image";
 interface Props {}
 
 async function Page(props: Props) {
-  const initial = await sanityFetch<any[]>({ query: exerciseS_QUERY });
+  const initial = await sanityFetch<any[]>({ query: EXERCISES_QUERY });
 
   let exercises = initial as Texercise[];
   return (
@@ -23,7 +23,7 @@ async function Page(props: Props) {
       <div
         className="
       border border-solid border-gray-200 rounded-md
-      p-3 min-h-[60vh]
+      p-3 h-[60vh] overflow-y-auto
       flex flex-col"
       >
         {exercises.map((x, key) => {
