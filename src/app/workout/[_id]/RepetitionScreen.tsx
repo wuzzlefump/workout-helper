@@ -201,7 +201,7 @@ function RepetitionScreen({
             </p>
           </div>
         </div>
-        <div className="h-[9vh] border-t border-black flex justify-center gap-40 md:gap-52">
+        <div className="h-[9vh] border-t border-black flex  justify-between px-10">
           <div
             onClick={() =>
               handleWorkoutTransition(
