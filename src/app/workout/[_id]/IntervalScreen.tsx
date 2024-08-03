@@ -240,7 +240,7 @@ function IntervalScreen({
             </div>
           </div>
         </div>
-        <div className="h-[9vh] border-t border-black flex justify-center gap-32 md:gap-44">
+        <div className="h-[9vh] border-t border-black flex justify-between px-10">
           <div
             onClick={() =>
               handleWorkoutTransition(
