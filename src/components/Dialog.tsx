@@ -21,7 +21,9 @@ export function MyDialog({ children, header, isOpen, onDismiss }: Props) {
           <div className="fixed inset-0 flex items-center justify-center p-4">
             <DialogPanel className={"p-5 max-w-xl rounded bg-white"}>
               <div className="font-semibold pb-2">{header}</div>
-              <div>{children}</div>
+              <div className="max-h-[350px] overflow-y-auto md:max-h-[600px]">
+                {children}
+              </div>
             </DialogPanel>
           </div>
         </div>
