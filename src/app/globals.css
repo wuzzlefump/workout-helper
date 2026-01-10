@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    /* Prevents pulling down to refresh if you want a fixed app feel */
+    overscroll-behavior-y: none;
+    /* Disables double-tap to zoom (makes buttons feel more responsive) */
+    touch-action: manipulation;
+    /* Fixes height issues on mobile browsers */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  button,
+  a {
+    /* Removes the gray highlight on tap in Safari */
+    -webkit-tap-highlight-color: transparent;
+  }
+}

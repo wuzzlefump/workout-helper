@@ -42,3 +42,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 https://www.sanity.io/guides/nextjs-app-router-live-preview
+
+Barbell squats (3 sets of 8-12 reps)
+Bulgarian split squat (3 sets of 8-12 reps)
+Leg press (3 sets of 8-12 reps)
+Leg extensions (3 sets of 8-12 reps)
+Standing calf raises (3 sets of 8-12 reps)
